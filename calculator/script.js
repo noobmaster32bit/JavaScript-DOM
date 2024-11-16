@@ -6,11 +6,15 @@ function displayNumber(event){
     let currentExpLastChar=result.value.slice(-1);
 
     if (operators.includes(currentExpLastChar) && operators.includes(val)){
-        return
+        
+        result.value=result.value.slice(0,-1)+val
+    }
+    else{
+        
+        result.value+=val;
     }
 
 
-    result.value+=val;
 
 }
 
