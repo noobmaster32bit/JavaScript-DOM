@@ -1,5 +1,5 @@
 function displayNumber(event){
-    var val = event.target.value;
+    var val = event.target.value; 
 
     let operators =["+","-","*", "/", "."];
 
