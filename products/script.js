@@ -246,6 +246,7 @@ var products = [
 
 displayProducts(products);
 
+
 function displayProducts(products) {
     let htmlData = ``; 
 
@@ -275,5 +276,36 @@ function displayProducts(products) {
     document.getElementById("root").innerHTML = htmlData;
 }
 
+getCategory(products);
+
+function getCategory(products){
+    let selectedCategory=new Set(products.map(p=>p.category));
+    // console.log(selectedCategory);
+
+    let categoryBox=document.getElementById("categorySelect");
+    
+    
+    for(let c of selectedCategory){
+        let tag=document.createElement("option");
+        tag.value=c;
+        tag.text=c;
+    
+        categoryBox.appendChild(tag);
+    
+    }
+}
+
+function displayCategory(event){
+    
+    let currentCategory=event.target.value;
+    console.log(currentCategory);
+
+    let productByCategory=products.filter(p=>p.category==currentCategory)
+
+    console.log(productByCategory);
+
+    displayProducts(productByCategory)
+    
+}
 
 
